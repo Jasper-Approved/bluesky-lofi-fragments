@@ -87,4 +87,21 @@
     summary:hover {
       color: #ffd580;
     }
+    .suno-badge {
+      display: flex;
+      align-items: center;
+      background: #1e1e1e;
+      color: #ffd580;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      margin-top: 20px;
+      box-shadow: 0 0 8px rgba(255, 213, 128, 0.3);
+    }
+    .suno-icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+    }
   </style>
