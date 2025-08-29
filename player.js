@@ -24,7 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const previewTrack = audioTracks[Math.floor(Math.random() * audioTracks.length)];
   previewTrack.classList.add("preview-track");
   previewTrack.volume = 0.4;
-  previewTrack.play().catch(() => {});
+  previewTrack.addEventListener("click", () => {
+  previewTrack.play();
+  });
 
   // Helper: get section from src
   const getSectionFromSrc = (src) => {
