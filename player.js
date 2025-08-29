@@ -20,9 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const fogPulse = document.getElementById("fogPulse");
 
   // Auto-play preview track
+  previewTrack.classList.add("preview-track");
   previewTrack.volume = 0.4;
   previewTrack.play().catch(() => {});
-
+  
   // Helper: get section from src
   function getSectionFromSrc(src) {
     if (src.includes("morning-coffee")) return "morning";
@@ -33,29 +34,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Timestamp logger + fog pulse activation
   audioTracks.forEach(track => {
-    track.addEventListener("play", () => {
-      const src = track.src.split("/").pop(); // get filename
-      const bpm = bpmMap[src] || 70; // default if unknown
-      const pulseDuration = (60 / bpm) * 2; // double beat cycle
-      const now = new Date();
-      const timestamp = now.toLocaleString();
-      console.log(
-        `%c🕰️ Dispatch dropped at ${timestamp} for ${track.src}`,
-        "color: #ffd580; font-weight: bold;"
-      fogPulse.style.animationDuration = `${pulseDuration}s`;
-      fogPulse.classList.add("active", getSectionFromSrc(track.src));
-      );
+  track.addEventListener("play", () => {
+  const src = track.src.split("/").pop();
+  const bpm = bpmMap[src] || 70;
+  const pulseDuration = (60 / bpm) * 2;
+  const now = new Date();
+  const timestamp = now.toLocaleString();
 
-      // Reset and apply section class
-      fogPulse.classList.remove("morning", "anime", "feline");
-      fogPulse.classList.add("active", getSectionFromSrc(track.src));
-    });
+  console.log(
+    `%c🕰️ Dispatch dropped at ${timestamp} for ${track.src}`,
+    "color: #ffd580; font-weight: bold"
+  );
 
-    track.addEventListener("pause", () => {
-      fogPulse.classList.remove("active", "morning", "anime", "feline");
-      fogPulse.style.animationDuration = "";
-    });
+  // Reset fog pulse classes
+  fogPulse.classList.remove("active", "morning", "anime", "feline");
 
+  // Apply new animation and section class
+  fogPulse.style.animationDuration = `${pulseDuration}s`;
+  fogPulse.classList.add("active", getSectionFromSrc(track.src));
+  });
+    
+  track.addEventListener("pause", () => {
+  fogPulse.classList.remove("active", "morning", "anime", "feline");
+  fogPulse.style.animationDuration = "";
+  });
+    
     track.addEventListener("ended", () => {
       fogPulse.classList.remove("active", "morning", "anime", "feline");
     });
