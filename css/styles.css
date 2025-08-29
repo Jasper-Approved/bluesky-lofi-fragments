@@ -22,11 +22,14 @@
     a[href="#top"]:hover {
     color: #ffffff;
     }
-    .fog-pulse {
-       font-size: 2rem;
-       animation: pulseFog 2.5s infinite ease-in-out;
-       display: inline-block;
-       margin: 0.5rem 0;
+   .fog-pulse {
+      font-size: 2rem;
+      display: inline-block;
+      margin: 0.5rem 0;
+      transition: transform 0.3s ease;
+    }
+    .fog-pulse.active {
+     animation: pulseFog 2.5s infinite ease-in-out;
     }
     @keyframes pulseFog {
       0% { transform: scale(1); opacity: 0.6; color: #888; }
