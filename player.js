@@ -1,8 +1,3 @@
-console.log(
-  `%c🕰️ Dispatch dropped at ${timestamp} for ${track.src}`,
-  "color: #ffd580; font-weight: bold;"
-);
-
 document.addEventListener("DOMContentLoaded", () => {
   const audioTracks = document.querySelectorAll("audio");
   const previewTrack = audioTracks[Math.floor(Math.random() * audioTracks.length)];
@@ -18,7 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
     track.addEventListener("play", () => {
       const now = new Date();
       const timestamp = now.toLocaleString();
-      console.log(`🕰️ Dispatch dropped at ${timestamp} for ${track.src}`);
+      console.log(
+        `%c🕰️ Dispatch dropped at ${timestamp} for ${track.src}`,
+        "color: #ffd580; font-weight: bold;"
+      );
     });
   });
 });
