@@ -6,6 +6,9 @@
       margin: 0;
       padding: 2rem;
     }
+    html {
+      scroll-behavior: smooth;
+    }
     h1 {
       font-size: 2rem;
       margin-bottom: 0.5rem;
