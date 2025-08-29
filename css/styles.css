@@ -45,6 +45,10 @@
     .fog-pulse.feline {
       color: #88ccaa; /* gearwhisk green */
     }
+    .preview-track {
+      outline: 2px dashed #ffd580;
+      border-radius: 4px;
+    }
     .section {
       margin-bottom: 2rem;
       border-left: 4px solid #888;
