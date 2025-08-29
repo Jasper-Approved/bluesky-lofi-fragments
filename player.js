@@ -1,3 +1,8 @@
+console.log(
+  `%c🕰️ Dispatch dropped at ${timestamp} for ${track.src}`,
+  "color: #ffd580; font-weight: bold;"
+);
+
 document.addEventListener("DOMContentLoaded", () => {
   const audioTracks = document.querySelectorAll("audio");
   const previewTrack = audioTracks[Math.floor(Math.random() * audioTracks.length)];
