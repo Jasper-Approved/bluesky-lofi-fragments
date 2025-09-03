@@ -1,12 +1,14 @@
 body, html {
   font-family: 'DM Sans', sans-serif;
-  background: url('images/fragments_lofi_glyph.png) no-repeat center center fixed;
+  background: url('../images/fragments_lofi_glyph.jpg') no-repeat center center fixed;
+      background-size: cover;
   background-color: #1e1e1e;
   color: #f5f5f5;
   margin: 0;
   padding: 2rem;
   scroll-behavior: smooth;
 }
+
 body::before {
   content: "";
   position: fixed;
@@ -21,6 +23,12 @@ h1, summary {
 }
 audio {
   width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 0 8px rgba(255, 213, 128, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+audio:hover {
+  box-shadow: 0 0 12px rgba(255, 213, 128, 0.5);
 }
 
 .fog-pulse {
@@ -94,3 +102,33 @@ audio {
       color: #ffd580;
     }
 
+ .lineage-log p strong {
+  color: #ffd580;
+}
+.lineage-log p:nth-child(3) {
+  font-style: italic;
+  text-shadow: 0 0 4px rgba(255, 213, 128, 0.3);
+}
+   
+.track.song-fragment {
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid #ffd580;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(255, 213, 128, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.track.song-fragment:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 16px rgba(255, 213, 128, 0.4);
+}
+
+.track.song-fragment strong {
+  font-family: 'Courier New', monospace;
+  color: #ffd580;
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
