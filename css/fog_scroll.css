@@ -144,3 +144,18 @@ audio:hover {
   display: block;
   margin-bottom: 0.5rem;
 }
+button {
+  background: #f0f0f0;
+  border: none;
+  padding: 0.5em 1em;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-bottom: 0.5em;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #ffd580;
+}
